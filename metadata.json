@@ -1,0 +1,6 @@
+{
+  "name": "TechnoMart",
+  "description": "An elite e-commerce platform for Samsung Galaxy Smartphones, Book Laptops, Ecosystem Wearables, and SmartThings Appliances with an AI Ecosystem Compatibility Engine powered by Gemini.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
