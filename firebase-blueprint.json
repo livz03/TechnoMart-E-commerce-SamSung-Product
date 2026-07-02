@@ -1,0 +1,59 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile metadata and preferences",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Firebase user identifier"
+        },
+        "email": {
+          "type": "string",
+          "description": "User primary email address"
+        }
+      },
+      "required": ["uid", "email"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "E-commerce transaction details",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique transaction key"
+        },
+        "userId": {
+          "type": "string",
+          "description": "Authorizing user ID"
+        },
+        "date": {
+          "type": "string",
+          "description": "Order placement date string"
+        },
+        "total": {
+          "type": "number",
+          "description": "Total payment amount due"
+        },
+        "status": {
+          "type": "string",
+          "description": "Current tracking status",
+          "enum": ["Processing", "Shipped", "Delivered"]
+        }
+      },
+      "required": ["id", "userId", "date", "total", "status"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Secure user configurations"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Secure transactional ledgers"
+    }
+  }
+}
